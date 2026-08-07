@@ -1,0 +1,100 @@
+{
+  "bleu-de-chanel": {
+    "top": [
+      { "noteId": "note-grapefruit", "canonicalName": "Grapefruit", "slug": "grapefruit", "order": 0 },
+      { "noteId": "note-lemon", "canonicalName": "Lemon", "slug": "lemon", "order": 1 },
+      { "noteId": "note-mint", "canonicalName": "Mint", "slug": "mint", "order": 2 },
+      { "noteId": "note-pink-pepper", "canonicalName": "Pink Pepper", "slug": "pink-pepper", "order": 3 }
+    ],
+    "heart": [
+      { "noteId": "note-ginger", "canonicalName": "Ginger", "slug": "ginger", "order": 0 },
+      { "noteId": "note-nutmeg", "canonicalName": "Nutmeg", "slug": "nutmeg", "order": 1 },
+      { "noteId": "note-jasmine", "canonicalName": "Jasmine", "slug": "jasmine", "order": 2 },
+      { "noteId": "note-iso-e-super", "canonicalName": "Iso E Super", "slug": "iso-e-super", "order": 3 }
+    ],
+    "base": [
+      { "noteId": "note-incense", "canonicalName": "Incense", "slug": "incense", "order": 0 },
+      { "noteId": "note-vetiver", "canonicalName": "Vetiver", "slug": "vetiver", "order": 1 },
+      { "noteId": "note-cedar", "canonicalName": "Cedar", "slug": "cedar", "order": 2 },
+      { "noteId": "note-sandalwood", "canonicalName": "Sandalwood", "slug": "sandalwood", "order": 3 },
+      { "noteId": "note-labdanum", "canonicalName": "Labdanum", "slug": "labdanum", "order": 4 }
+    ]
+  },
+  "coco-mademoiselle": {
+    "top": [
+      { "noteId": "note-orange", "canonicalName": "Orange", "slug": "orange", "order": 0 },
+      { "noteId": "note-bergamot", "canonicalName": "Bergamot", "slug": "bergamot", "order": 1 },
+      { "noteId": "note-grapefruit", "canonicalName": "Grapefruit", "slug": "grapefruit", "order": 2 }
+    ],
+    "heart": [
+      { "noteId": "note-jasmine", "canonicalName": "Jasmine", "slug": "jasmine", "order": 0 },
+      { "noteId": "note-turkish-rose", "canonicalName": "Turkish Rose", "slug": "turkish-rose", "order": 1 },
+      { "noteId": "note-litchi", "canonicalName": "Litchi", "slug": "litchi", "order": 2 },
+      { "noteId": "note-ylang-ylang", "canonicalName": "Ylang-Ylang", "slug": "ylang-ylang", "order": 3 }
+    ],
+    "base": [
+      { "noteId": "note-patchouli", "canonicalName": "Patchouli", "slug": "patchouli", "order": 0 },
+      { "noteId": "note-white-musk", "canonicalName": "White Musk", "slug": "white-musk", "order": 1 },
+      { "noteId": "note-vanilla", "canonicalName": "Vanilla", "slug": "vanilla", "order": 2 },
+      { "noteId": "note-vetiver", "canonicalName": "Vetiver", "slug": "vetiver", "order": 3 },
+      { "noteId": "note-tonka-bean", "canonicalName": "Tonka Bean", "slug": "tonka-bean", "order": 4 }
+    ]
+  },
+  "tobacco-vanille": {
+    "top": [
+      { "noteId": "note-tobacco-leaf", "canonicalName": "Tobacco Leaf", "slug": "tobacco-leaf", "order": 0 },
+      { "noteId": "note-spicy-notes", "canonicalName": "Spicy Notes", "slug": "spicy-notes", "order": 1 },
+      { "noteId": "note-aldehydes", "canonicalName": "Aldehydes", "slug": "aldehydes", "order": 2 }
+    ],
+    "heart": [
+      { "noteId": "note-vanilla", "canonicalName": "Vanilla", "slug": "vanilla", "order": 0 },
+      { "noteId": "note-cacao", "canonicalName": "Cacao", "slug": "cacao", "order": 1 },
+      { "noteId": "note-tonka-bean", "canonicalName": "Tonka Bean", "slug": "tonka-bean", "order": 2 },
+      { "noteId": "note-tobacco-blossom", "canonicalName": "Tobacco Blossom", "slug": "tobacco-blossom", "order": 3 }
+    ],
+    "base": [
+      { "noteId": "note-dried-fruits", "canonicalName": "Dried Fruits", "slug": "dried-fruits", "order": 0 },
+      { "noteId": "note-woody-notes", "canonicalName": "Woody Notes", "slug": "woody-notes", "order": 1 },
+      { "noteId": "note-tonka-bean", "canonicalName": "Tonka Bean", "slug": "tonka-bean", "order": 2 }
+    ]
+  },
+  "black-orchid": {
+    "top": [
+      { "noteId": "note-truffle", "canonicalName": "Truffle", "slug": "truffle", "order": 0 },
+      { "noteId": "note-ylang-ylang", "canonicalName": "Ylang-Ylang", "slug": "ylang-ylang", "order": 1 },
+      { "noteId": "note-blackcurrant", "canonicalName": "Blackcurrant", "slug": "blackcurrant", "order": 2 },
+      { "noteId": "note-bergamot", "canonicalName": "Bergamot", "slug": "bergamot", "order": 3 }
+    ],
+    "heart": [
+      { "noteId": "note-orchid", "canonicalName": "Orchid", "slug": "orchid", "order": 0 },
+      { "noteId": "note-spices", "canonicalName": "Spices", "slug": "spices", "order": 1 },
+      { "noteId": "note-lotus-wood", "canonicalName": "Lotus Wood", "slug": "lotus-wood", "order": 2 },
+      { "noteId": "note-fruity-notes", "canonicalName": "Fruity Notes", "slug": "fruity-notes", "order": 3 }
+    ],
+    "base": [
+      { "noteId": "note-patchouli", "canonicalName": "Patchouli", "slug": "patchouli", "order": 0 },
+      { "noteId": "note-dark-chocolate", "canonicalName": "Dark Chocolate", "slug": "dark-chocolate", "order": 1 },
+      { "noteId": "note-incense", "canonicalName": "Incense", "slug": "incense", "order": 2 },
+      { "noteId": "note-vanilla", "canonicalName": "Vanilla", "slug": "vanilla", "order": 3 },
+      { "noteId": "note-sandalwood", "canonicalName": "Sandalwood", "slug": "sandalwood", "order": 4 },
+      { "noteId": "note-vetiver", "canonicalName": "Vetiver", "slug": "vetiver", "order": 5 }
+    ]
+  },
+  "replica-beach-walk": {
+    "top": [
+      { "noteId": "note-bergamot", "canonicalName": "Bergamot", "slug": "bergamot", "order": 0 },
+      { "noteId": "note-pink-pepper", "canonicalName": "Pink Pepper", "slug": "pink-pepper", "order": 1 },
+      { "noteId": "note-lemon", "canonicalName": "Lemon", "slug": "lemon", "order": 2 }
+    ],
+    "heart": [
+      { "noteId": "note-coconut-milk", "canonicalName": "Coconut Milk", "slug": "coconut-milk", "order": 0 },
+      { "noteId": "note-ylang-ylang", "canonicalName": "Ylang-Ylang", "slug": "ylang-ylang", "order": 1 },
+      { "noteId": "note-heliotrope", "canonicalName": "Heliotrope", "slug": "heliotrope", "order": 2 }
+    ],
+    "base": [
+      { "noteId": "note-cedar", "canonicalName": "Cedar", "slug": "cedar", "order": 0 },
+      { "noteId": "note-musk", "canonicalName": "Musk", "slug": "musk", "order": 1 },
+      { "noteId": "note-benzoin", "canonicalName": "Benzoin", "slug": "benzoin", "order": 2 }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "bleu-de-chanel": [
+    { "metric": "GENDER", "buckets": { "0": 412, "1": 268, "2": 121, "3": 34, "4": 11 }, "totalVotes": 846 },
+    { "metric": "LONGEVITY", "buckets": { "0": 18, "1": 64, "2": 213, "3": 388, "4": 142 }, "totalVotes": 825 },
+    { "metric": "SILLAGE", "buckets": { "0": 27, "1": 96, "2": 341, "3": 254, "4": 61 }, "totalVotes": 779 },
+    { "metric": "VALUE", "buckets": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0 }, "totalVotes": 0 }
+  ],
+  "coco-mademoiselle": [
+    { "metric": "GENDER", "buckets": { "0": 9, "1": 22, "2": 88, "3": 241, "4": 507 }, "totalVotes": 867 },
+    { "metric": "LONGEVITY", "buckets": { "0": 11, "1": 43, "2": 168, "3": 402, "4": 219 }, "totalVotes": 843 },
+    { "metric": "SILLAGE", "buckets": { "0": 14, "1": 58, "2": 197, "3": 359, "4": 178 }, "totalVotes": 806 },
+    { "metric": "VALUE", "buckets": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0 }, "totalVotes": 0 }
+  ],
+  "tobacco-vanille": [
+    { "metric": "GENDER", "buckets": { "0": 188, "1": 214, "2": 302, "3": 96, "4": 41 }, "totalVotes": 841 },
+    { "metric": "LONGEVITY", "buckets": { "0": 6, "1": 19, "2": 87, "3": 296, "4": 578 }, "totalVotes": 986 },
+    { "metric": "SILLAGE", "buckets": { "0": 8, "1": 24, "2": 112, "3": 331, "4": 489 }, "totalVotes": 964 },
+    { "metric": "VALUE", "buckets": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0 }, "totalVotes": 0 }
+  ],
+  "black-orchid": [
+    { "metric": "GENDER", "buckets": { "0": 52, "1": 108, "2": 289, "3": 216, "4": 174 }, "totalVotes": 839 },
+    { "metric": "LONGEVITY", "buckets": { "0": 9, "1": 31, "2": 128, "3": 341, "4": 402 }, "totalVotes": 911 },
+    { "metric": "SILLAGE", "buckets": { "0": 7, "1": 26, "2": 104, "3": 287, "4": 468 }, "totalVotes": 892 },
+    { "metric": "VALUE", "buckets": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0 }, "totalVotes": 0 }
+  ],
+  "replica-beach-walk": [
+    { "metric": "GENDER", "buckets": { "0": 61, "1": 94, "2": 318, "3": 152, "4": 88 }, "totalVotes": 713 },
+    { "metric": "LONGEVITY", "buckets": { "0": 87, "1": 214, "2": 268, "3": 96, "4": 21 }, "totalVotes": 686 },
+    { "metric": "SILLAGE", "buckets": { "0": 112, "1": 231, "2": 243, "3": 74, "4": 18 }, "totalVotes": 678 },
+    { "metric": "VALUE", "buckets": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0 }, "totalVotes": 0 }
+  ]
+}

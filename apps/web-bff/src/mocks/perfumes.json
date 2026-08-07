@@ -1,0 +1,197 @@
+[
+  {
+    "id": "perfume-bleu-de-chanel",
+    "brandId": "brand-chanel",
+    "collection": null,
+    "name": "Bleu de Chanel",
+    "slug": "bleu-de-chanel",
+    "description": "A woody aromatic fragrance built on a citrus opening, a spiced ginger heart and a smoky incense-cedar drydown. Composed for a man who defies convention.",
+    "imageUrl": null,
+    "storeUrl": "https://example.com/store/bleu-de-chanel",
+    "releaseYear": 2010,
+    "discontinued": false,
+    "discontinuationNotes": null,
+    "perfumers": [
+      { "id": "perfumer-jacques-polge", "name": "Jacques Polge", "slug": "jacques-polge", "role": "PERFUMER" }
+    ],
+    "accords": [
+      { "id": "accord-woody", "name": "Woody", "slug": "woody", "source": "COMPUTED", "weight": 0.92 },
+      { "id": "accord-citrus", "name": "Citrus", "slug": "citrus", "source": "COMPUTED", "weight": 0.71 },
+      { "id": "accord-smoky", "name": "Smoky", "slug": "smoky", "source": "MANUAL", "weight": 0.58 }
+    ],
+    "remindsMeOf": [
+      { "perfumeId": "perfume-black-orchid", "name": "Black Orchid", "slug": "black-orchid", "imageUrl": null, "score": 42, "upvotes": 58, "downvotes": 16 }
+    ],
+    "peopleAlsoLike": [
+      { "perfumeId": "perfume-tobacco-vanille", "name": "Tobacco Vanille", "slug": "tobacco-vanille", "imageUrl": null, "score": 96, "upvotes": 121, "downvotes": 25 }
+    ],
+    "latestReviews": [
+      {
+        "id": "review-bdc-1",
+        "title": "Reliable and sharp",
+        "content": "The opening is bright citrus, then it settles into a smoky cedar that lasts most of a workday. Safe but never boring.",
+        "authorUsername": "cedarwood",
+        "score": 9,
+        "createdAt": "2026-05-14T09:24:00.000Z"
+      },
+      {
+        "id": "review-bdc-2",
+        "title": null,
+        "content": "Ubiquitous for a reason. Projects well for the first two hours, then hugs the skin.",
+        "authorUsername": "notesandtones",
+        "score": 7,
+        "createdAt": "2026-04-02T17:41:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "perfume-coco-mademoiselle",
+    "brandId": "brand-chanel",
+    "collection": { "id": "collection-coco", "name": "Coco", "slug": "coco" },
+    "name": "Coco Mademoiselle",
+    "slug": "coco-mademoiselle",
+    "description": "An oriental fresh composition with a sparkling orange opening, a rose and jasmine heart, and a patchouli-vanilla base.",
+    "imageUrl": null,
+    "storeUrl": "https://example.com/store/coco-mademoiselle",
+    "releaseYear": 2001,
+    "discontinued": false,
+    "discontinuationNotes": null,
+    "perfumers": [
+      { "id": "perfumer-jacques-polge", "name": "Jacques Polge", "slug": "jacques-polge", "role": "PERFUMER" }
+    ],
+    "accords": [
+      { "id": "accord-floral", "name": "Floral", "slug": "floral", "source": "COMPUTED", "weight": 0.88 },
+      { "id": "accord-patchouli", "name": "Patchouli", "slug": "patchouli", "source": "COMPUTED", "weight": 0.64 }
+    ],
+    "remindsMeOf": [],
+    "peopleAlsoLike": [
+      { "perfumeId": "perfume-black-orchid", "name": "Black Orchid", "slug": "black-orchid", "imageUrl": null, "score": 61, "upvotes": 79, "downvotes": 18 }
+    ],
+    "latestReviews": [
+      {
+        "id": "review-cm-1",
+        "title": "Modern classic",
+        "content": "Bright and clean at first spray, then the patchouli takes over. Excellent longevity on fabric.",
+        "authorUsername": "rosemarie",
+        "score": 9,
+        "createdAt": "2026-06-01T12:05:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "perfume-tobacco-vanille",
+    "brandId": "brand-tom-ford",
+    "collection": { "id": "collection-private-blend", "name": "Private Blend", "slug": "private-blend" },
+    "name": "Tobacco Vanille",
+    "slug": "tobacco-vanille",
+    "description": "An opulent spicy-sweet composition of tobacco leaf and creamy vanilla, layered over cacao, tonka bean and dried fruits.",
+    "imageUrl": null,
+    "storeUrl": "https://example.com/store/tobacco-vanille",
+    "releaseYear": 2007,
+    "discontinued": false,
+    "discontinuationNotes": null,
+    "perfumers": [
+      { "id": "perfumer-olivier-gillotin", "name": "Olivier Gillotin", "slug": "olivier-gillotin", "role": "PERFUMER" }
+    ],
+    "accords": [
+      { "id": "accord-warm-spicy", "name": "Warm Spicy", "slug": "warm-spicy", "source": "COMPUTED", "weight": 0.95 },
+      { "id": "accord-vanilla", "name": "Vanilla", "slug": "vanilla", "source": "COMPUTED", "weight": 0.89 },
+      { "id": "accord-tobacco", "name": "Tobacco", "slug": "tobacco", "source": "MANUAL", "weight": 0.83 }
+    ],
+    "remindsMeOf": [
+      { "perfumeId": "perfume-black-orchid", "name": "Black Orchid", "slug": "black-orchid", "imageUrl": null, "score": 74, "upvotes": 92, "downvotes": 18 }
+    ],
+    "peopleAlsoLike": [
+      { "perfumeId": "perfume-bleu-de-chanel", "name": "Bleu de Chanel", "slug": "bleu-de-chanel", "imageUrl": null, "score": 55, "upvotes": 71, "downvotes": 16 }
+    ],
+    "latestReviews": [
+      {
+        "id": "review-tv-1",
+        "title": "Autumn in a bottle",
+        "content": "Thick, sweet and resinous. Two sprays is plenty — it fills a room and stays on a scarf for days.",
+        "authorUsername": "ambergris",
+        "score": 10,
+        "createdAt": "2026-06-18T20:12:00.000Z"
+      },
+      {
+        "id": "review-tv-2",
+        "title": "Too sweet for me",
+        "content": "Beautifully made but the vanilla dominates everything after the first hour.",
+        "authorUsername": "drydown",
+        "score": 6,
+        "createdAt": "2026-03-27T08:55:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "perfume-black-orchid",
+    "brandId": "brand-tom-ford",
+    "collection": null,
+    "name": "Black Orchid",
+    "slug": "black-orchid",
+    "description": "A dark floral chypre with truffle and blackcurrant over a black orchid heart, resolving into chocolate, patchouli and incense.",
+    "imageUrl": null,
+    "storeUrl": "https://example.com/store/black-orchid",
+    "releaseYear": 2006,
+    "discontinued": false,
+    "discontinuationNotes": null,
+    "perfumers": [
+      { "id": "perfumer-david-apel", "name": "David Apel", "slug": "david-apel", "role": "PERFUMER" },
+      { "id": "perfumer-pierre-negrin", "name": "Pierre Negrin", "slug": "pierre-negrin", "role": "PERFUMER" }
+    ],
+    "accords": [
+      { "id": "accord-floral", "name": "Floral", "slug": "floral", "source": "COMPUTED", "weight": 0.79 },
+      { "id": "accord-sweet", "name": "Sweet", "slug": "sweet", "source": "COMPUTED", "weight": 0.72 }
+    ],
+    "remindsMeOf": [
+      { "perfumeId": "perfume-tobacco-vanille", "name": "Tobacco Vanille", "slug": "tobacco-vanille", "imageUrl": null, "score": 68, "upvotes": 84, "downvotes": 16 }
+    ],
+    "peopleAlsoLike": [
+      { "perfumeId": "perfume-coco-mademoiselle", "name": "Coco Mademoiselle", "slug": "coco-mademoiselle", "imageUrl": null, "score": 39, "upvotes": 52, "downvotes": 13 }
+    ],
+    "latestReviews": [
+      {
+        "id": "review-bo-1",
+        "title": "Unmistakable",
+        "content": "Divisive and completely singular. The truffle note reads almost savoury before the chocolate arrives.",
+        "authorUsername": "orchidhunter",
+        "score": 8,
+        "createdAt": "2026-05-30T15:33:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "perfume-replica-beach-walk",
+    "brandId": "brand-maison-margiela",
+    "collection": { "id": "collection-replica", "name": "Replica", "slug": "replica" },
+    "name": "Replica Beach Walk",
+    "slug": "replica-beach-walk",
+    "description": "A soft solar floral evoking sunscreen and warm skin — coconut milk and heliotrope over cedar and musk.",
+    "imageUrl": null,
+    "storeUrl": null,
+    "releaseYear": 2012,
+    "discontinued": false,
+    "discontinuationNotes": null,
+    "perfumers": [
+      { "id": "perfumer-jacques-cavallier", "name": "Jacques Cavallier", "slug": "jacques-cavallier", "role": "PERFUMER" }
+    ],
+    "accords": [
+      { "id": "accord-coconut", "name": "Coconut", "slug": "coconut", "source": "COMPUTED", "weight": 0.86 },
+      { "id": "accord-salty", "name": "Salty", "slug": "salty", "source": "MANUAL", "weight": 0.54 }
+    ],
+    "remindsMeOf": [],
+    "peopleAlsoLike": [
+      { "perfumeId": "perfume-bleu-de-chanel", "name": "Bleu de Chanel", "slug": "bleu-de-chanel", "imageUrl": null, "score": 28, "upvotes": 41, "downvotes": 13 }
+    ],
+    "latestReviews": [
+      {
+        "id": "review-rbw-1",
+        "title": "Summer memory",
+        "content": "Exactly what it says on the label. Gentle projection, gone in four hours, but lovely while it lasts.",
+        "authorUsername": "saltair",
+        "score": 8,
+        "createdAt": "2026-07-02T11:18:00.000Z"
+      }
+    ]
+  }
+]

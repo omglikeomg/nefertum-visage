@@ -1,0 +1,5 @@
+[
+  { "id": "brand-chanel", "name": "Chanel", "slug": "chanel" },
+  { "id": "brand-tom-ford", "name": "Tom Ford", "slug": "tom-ford" },
+  { "id": "brand-maison-margiela", "name": "Maison Margiela", "slug": "maison-margiela" }
+]
