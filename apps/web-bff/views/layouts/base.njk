@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ ASSET_BASE_PATH }}/static/styles/main.css">
+  <title>{{ title }} — Nefertum</title>
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <nav class="container mx-auto px-4 py-3">
+      <a href="/" class="text-xl font-semibold">Nefertum</a>
+    </nav>
+  </header>
+  <main class="container mx-auto px-4 py-6">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="container mx-auto px-4 py-6 text-sm text-gray-500">
+    Nefertum — Phase 1
+  </footer>
+  {# R29/AC10 — self-hosted HTMX 2.x, no CDN. #}
+  <script src="{{ ASSET_BASE_PATH }}/static/scripts/htmx.min.js" defer></script>
+</body>
+</html>

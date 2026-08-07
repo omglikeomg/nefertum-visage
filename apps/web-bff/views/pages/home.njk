@@ -1,0 +1,20 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+  <h1 class="text-3xl font-bold mb-6">Featured perfumes</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for perfume in featuredPerfumes %}
+      <a href="/fragrance/{{ perfume.slug }}" class="block bg-white shadow rounded-lg overflow-hidden hover:shadow-lg transition">
+        <img src="{{ perfume.imageUrl | imgFallback }}" alt="{{ perfume.name }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <p class="text-sm text-gray-500">{{ perfume.brand.name }}</p>
+          <h2 class="text-lg font-semibold">{{ perfume.name }}</h2>
+          {% if perfume.releaseYear %}
+            <p class="text-xs text-gray-400">{{ perfume.releaseYear }}</p>
+          {% endif %}
+        </div>
+      </a>
+    {% else %}
+      <p class="text-gray-500">No perfumes available.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

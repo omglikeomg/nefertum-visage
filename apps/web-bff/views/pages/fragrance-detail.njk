@@ -1,0 +1,56 @@
+{% extends "layouts/base.njk" %}
+{% from "components/note-pyramid.njk" import render as renderPyramid %}
+{% from "components/scale-histogram.njk" import render as renderHistogram %}
+{% from "components/shelf-selector.njk" import render as renderShelf %}
+{% block content %}
+  <article>
+    <header class="mb-6">
+      <p class="text-sm text-gray-500">{{ perfume.brand.name }}</p>
+      <h1 class="text-3xl font-bold">{{ perfume.name }}</h1>
+      {% if perfume.releaseYear %}
+        <p class="text-xs text-gray-400 mt-1">{{ perfume.releaseYear }}</p>
+      {% endif %}
+      {% if perfume.description %}
+        <p class="mt-3 text-gray-700">{{ perfume.description }}</p>
+      {% endif %}
+    </header>
+
+    {% if perfume.accords.length %}
+      <section class="mb-6 flex flex-wrap gap-2">
+        {% for accord in perfume.accords %}
+          <span class="text-xs bg-gray-200 rounded-full px-3 py-1">{{ accord.name }}</span>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {{ renderPyramid(perfume.notes) }}
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold mb-4">Community votes</h2>
+      {% for histogram in perfume.scaleHistograms %}
+        {{ renderHistogram(histogram, perfume.id, histogram.metric) }}
+      {% endfor %}
+    </section>
+
+    <section class="mt-8">
+      {{ renderShelf(perfume.id, perfume.userShelfStatus) }}
+    </section>
+
+    {% if perfume.latestReviews.length %}
+      <section class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Latest reviews</h2>
+        {% for review in perfume.latestReviews %}
+          <article class="bg-white shadow rounded p-4 mb-3">
+            {% if review.title %}
+              <h3 class="font-semibold">{{ review.title }}</h3>
+            {% endif %}
+            <p class="text-sm text-gray-700 mt-1">{{ review.content }}</p>
+            <p class="text-xs text-gray-400 mt-2">
+              {{ review.authorUsername }} — {{ review.createdAt | formatDate }}
+            </p>
+          </article>
+        {% endfor %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}
