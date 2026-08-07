@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "apps/web-bff/src",
+    "sourceMap": true
+  },
+  "include": ["apps/web-bff/src/**/*", "apps/web-bff/tests/**/*"],
+  "exclude": ["node_modules", "dist", "coverage"]
+}
