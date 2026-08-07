@@ -13,6 +13,12 @@ export default tseslint.config(
       // hub-specs/specs/coding-standards.md
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/consistent-type-imports': 'warn',
+      // Express identifies error handlers by arity, so the trailing `next`
+      // must stay in the signature even when unused.
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
       'no-restricted-syntax': [
         'error',
         {

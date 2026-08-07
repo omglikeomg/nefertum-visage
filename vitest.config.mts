@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitest/config';
 
-// R34 — kept separate from vite.config.ts so the Tailwind asset pipeline and
-// the test runner configuration stay independently readable.
+// R34 — kept separate from vite.config.mts so the Tailwind asset pipeline and
+// the test runner configuration stay independently readable. .mts for the same
+// ESM reason documented in vite.config.mts.
 export default defineConfig({
   test: {
     environment: 'node',
