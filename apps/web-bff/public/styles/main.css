@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Tailwind v4 scans these globs for class usage. Without an explicit @source
+   the .njk templates are outside the default content detection, so utility
+   classes used only in Nunjucks markup would be purged (E6). */
+@source "../../views/**/*.njk";
