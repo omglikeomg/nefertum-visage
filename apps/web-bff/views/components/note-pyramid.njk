@@ -1,0 +1,22 @@
+{# R23 — takes a PerfumeDetailsNotePyramid and renders three colour-coded columns. #}
+{% macro render(notes) %}
+  <section class="grid grid-cols-3 gap-4">
+    {% for level, color in [["top", "bg-yellow-200"], ["heart", "bg-rose-200"], ["base", "bg-amber-200"]] %}
+      <div>
+        <h3 class="text-sm font-semibold uppercase mb-2">{{ level }}</h3>
+        {% if notes[level].length === 0 %}
+          <p class="text-xs text-gray-400">No notes recorded</p>
+        {% else %}
+          <ul>
+            {% for note in notes[level] %}
+              <li class="mb-1">
+                <span class="inline-block w-2 h-2 rounded-full {{ color }} mr-2"></span>
+                <a href="/note/{{ note.slug }}" class="text-sm text-gray-700 hover:underline">{{ note.canonicalName }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{% endmacro %}

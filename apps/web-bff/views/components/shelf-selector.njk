@@ -1,0 +1,23 @@
+{# R25 — HTMX form posting on select change, swapped as outerHTML. The empty
+   option doubles as the "remove from shelf" action; the router maps an empty
+   string to null. #}
+{% macro render(perfumeId, currentShelf) %}
+  <div id="shelf-selector-{{ perfumeId }}">
+    <form hx-post="/fragrance/{{ perfumeId }}/shelf"
+          hx-target="#shelf-selector-{{ perfumeId }}"
+          hx-swap="outerHTML"
+          hx-trigger="change from:select">
+      <label class="block text-sm font-semibold mb-1" for="shelf-{{ perfumeId }}">Add to shelf:</label>
+      <select id="shelf-{{ perfumeId }}" name="shelf" class="border rounded px-2 py-1">
+        <option value="" {% if not currentShelf %}selected{% endif %}>
+          {% if currentShelf %}Remove from shelf{% else %}+ Add to Shelf{% endif %}
+        </option>
+        <option value="HAVE" {% if currentShelf === 'HAVE' %}selected{% endif %}>Have</option>
+        <option value="HAD" {% if currentShelf === 'HAD' %}selected{% endif %}>Had</option>
+        <option value="WANT" {% if currentShelf === 'WANT' %}selected{% endif %}>Want</option>
+        <option value="WANT_TO_TRY" {% if currentShelf === 'WANT_TO_TRY' %}selected{% endif %}>Want to try</option>
+        <option value="FAVORITES" {% if currentShelf === 'FAVORITES' %}selected{% endif %}>Favorites</option>
+      </select>
+    </form>
+  </div>
+{% endmacro %}
