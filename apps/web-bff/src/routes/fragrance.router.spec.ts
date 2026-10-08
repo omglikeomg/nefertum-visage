@@ -76,6 +76,20 @@ describe('fragrance router', () => {
       expect(res.status).toBe(400);
     });
 
+    it('returns 400 when the bucket has trailing non-digits', async () => {
+      const res = await request(app).post(`/fragrance/${KNOWN_ID}/vote/LONGEVITY?bucket=2abc`);
+
+      expect(res.status).toBe(400);
+      expect(res.text).toBe('Bucket must be an integer between 0 and 4.');
+    });
+
+    it('returns 400 when the bucket is a decimal', async () => {
+      const res = await request(app).post(`/fragrance/${KNOWN_ID}/vote/LONGEVITY?bucket=3.7`);
+
+      expect(res.status).toBe(400);
+      expect(res.text).toBe('Bucket must be an integer between 0 and 4.');
+    });
+
     it('returns 400 when the bucket is missing', async () => {
       const res = await request(app).post(`/fragrance/${KNOWN_ID}/vote/LONGEVITY`);
 
