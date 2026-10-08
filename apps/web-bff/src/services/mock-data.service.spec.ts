@@ -1,13 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { Request } from 'express';
 
-import { MockDataService } from './mock-data.service';
+import { MockDataService, toComparisonItem } from './mock-data.service';
 import type { ScaleMetric, ShelfKind } from '../types/domain.types';
 
 const req = {} as Request;
 
 const KNOWN_SLUG = 'bleu-de-chanel';
 const KNOWN_ID = 'perfume-bleu-de-chanel';
+const COCO_ID = 'perfume-coco-mademoiselle';
 
 describe('MockDataService', () => {
   let service: MockDataService;
@@ -123,6 +124,66 @@ describe('MockDataService', () => {
   describe('getCurrentShelf', () => {
     it('returns null when the perfume is not on a shelf', () => {
       expect(service.getCurrentShelf(KNOWN_ID)).toBeNull();
+    });
+  });
+
+  describe('getPerfumesForComparison', () => {
+    it('COMPARE-API-1: returns brand, name, slug, notes and longevity then sillage histograms', async () => {
+      const [item] = await service.getPerfumesForComparison(req, [KNOWN_ID]);
+      expect(item).toMatchObject({
+        id: KNOWN_ID,
+        name: 'Bleu de Chanel',
+        slug: KNOWN_SLUG,
+        brand: { name: 'Chanel' },
+      });
+      expect(item.notes.top.map((n) => n.canonicalName)).toContain('Grapefruit');
+      expect(item.scaleHistograms.map((h) => h.metric)).toEqual(['LONGEVITY', 'SILLAGE']);
+    });
+
+    it('COMPARE-API-2: keeps input order', async () => {
+      const items = await service.getPerfumesForComparison(req, [COCO_ID, KNOWN_ID]);
+      expect(items.map((p) => p.id)).toEqual([COCO_ID, KNOWN_ID]);
+    });
+
+    it('COMPARE-API-3: returns a repeated ID once', async () => {
+      const items = await service.getPerfumesForComparison(req, [KNOWN_ID, COCO_ID, KNOWN_ID]);
+      expect(items.map((p) => p.id)).toEqual([KNOWN_ID, COCO_ID]);
+    });
+
+    it('COMPARE-API-4: omits unknown IDs without an error', async () => {
+      const items = await service.getPerfumesForComparison(req, ['nope', KNOWN_ID, '']);
+      expect(items.map((p) => p.id)).toEqual([KNOWN_ID]);
+    });
+
+    it('COMPARE-API-5: rejects more than 50 IDs', async () => {
+      await expect(
+        service.getPerfumesForComparison(req, Array(51).fill(KNOWN_ID)),
+      ).rejects.toThrow('At most 50 perfume IDs can be compared at once.');
+    });
+
+    it('does not share bucket state with the detail data', async () => {
+      const [before] = await service.getPerfumesForComparison(req, [KNOWN_ID]);
+      const longevityBefore = [...before.scaleHistograms[0].buckets];
+      await service.recordScaleVote(req, KNOWN_ID, 'LONGEVITY', 0);
+      expect(before.scaleHistograms[0].buckets).toEqual(longevityBefore);
+      const [after] = await service.getPerfumesForComparison(req, [KNOWN_ID]);
+      expect(after.scaleHistograms[0].buckets[0]).toBe(longevityBefore[0] + 1);
+    });
+  });
+
+  describe('toComparisonItem', () => {
+    it('COMPARE-API-6: converts buckets to five counts by code and zero-fills a missing metric', async () => {
+      const perfume = (await service.getPerfumeBySlug(req, KNOWN_SLUG))!;
+      const item = toComparisonItem({
+        ...perfume,
+        scaleHistograms: [
+          { metric: 'LONGEVITY', buckets: { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5 }, totalVotes: 15 },
+        ],
+      });
+      expect(item.scaleHistograms).toEqual([
+        { metric: 'LONGEVITY', buckets: [1, 2, 3, 4, 5], totalVotes: 15 },
+        { metric: 'SILLAGE', buckets: [0, 0, 0, 0, 0], totalVotes: 0 },
+      ]);
     });
   });
 });

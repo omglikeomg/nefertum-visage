@@ -3,7 +3,7 @@
    vocabulary matches the domain. VALUE is included because the mock data
    carries a VALUE histogram for shape parity; without it the labels lookup
    resolves to an empty string and the bars render unlabelled. #}
-{% macro render(histogram, perfumeId, metric) %}
+{% macro render(histogram, perfumeId, metric, readOnly=false) %}
   {% set labels = {
     "GENDER": ["Masc", "Lean M", "Bal", "Lean F", "Fem"],
     "LONGEVITY": ["Poor", "Weak", "Mod", "Long", "Beast"],
@@ -14,6 +14,12 @@
     <h4 class="text-sm font-semibold mb-2">{{ metric }}</h4>
     <div class="flex items-end h-32 gap-1">
       {% for bucket in [0, 1, 2, 3, 4] %}
+        {% if readOnly %}
+        <div class="bg-blue-500 text-white text-xs px-2 py-1"
+             style="height: {{ histogram.buckets[bucket] | percentage(histogram.totalVotes) }}%; min-height: 8px;">
+          {{ labels[metric][bucket] }}<br>{{ histogram.buckets[bucket] }}
+        </div>
+        {% else %}
         <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs px-2 py-1"
                 hx-post="/fragrance/{{ perfumeId }}/vote/{{ metric }}?bucket={{ bucket }}"
                 hx-target="#histogram-{{ perfumeId }}-{{ metric }}"
@@ -22,9 +28,12 @@
                 style="height: {{ histogram.buckets[bucket] | percentage(histogram.totalVotes) }}%; min-height: 8px;">
           {{ labels[metric][bucket] }}<br>{{ histogram.buckets[bucket] }}
         </button>
+        {% endif %}
       {% endfor %}
     </div>
     <p class="text-xs text-gray-400 mt-1">{{ histogram.totalVotes }} votes</p>
+    {% if not readOnly %}
     <div id="histogram-{{ perfumeId }}-{{ metric }}-spinner" class="htmx-indicator">Loading…</div>
+    {% endif %}
   </div>
 {% endmacro %}

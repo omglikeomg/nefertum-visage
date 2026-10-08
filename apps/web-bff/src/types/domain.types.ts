@@ -1,5 +1,6 @@
 // Mirrors the source-of-truth types in nefertum-nest:
 //   apps/api/src/application/catalog/perfume/queries/get-perfume-details/get-perfume-details.types.ts
+//   apps/api/src/application/catalog/perfume/queries/get-perfumes-for-comparison/get-perfumes-for-comparison.types.ts
 //
 // Drift between this file and that one is a bug (AC15). Two deliberate
 // deviations, both forced by the transport boundary:
@@ -114,4 +115,25 @@ export interface PerfumeDetailsResult {
   remindsMeOf: PerfumeDetailsRelation[];
   peopleAlsoLike: PerfumeDetailsRelation[];
   latestReviews: PerfumeDetailsReview[];
+}
+
+export const COMPARISON_METRICS = ['LONGEVITY', 'SILLAGE'] as const;
+export type ComparisonMetric = (typeof COMPARISON_METRICS)[number];
+
+export const MAX_COMPARISON_IDS = 50;
+
+export interface PerfumeComparisonScaleHistogram {
+  metric: ComparisonMetric;
+  // Five counts; the index is the bucket code.
+  buckets: number[];
+  totalVotes: number;
+}
+
+export interface PerfumeComparisonItem {
+  id: string;
+  name: string;
+  slug: string;
+  brand: PerfumeDetailsBrand;
+  notes: PerfumeDetailsNotePyramid;
+  scaleHistograms: PerfumeComparisonScaleHistogram[];
 }

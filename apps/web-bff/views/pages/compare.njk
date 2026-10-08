@@ -1,0 +1,26 @@
+{% extends "layouts/base.njk" %}
+{% from "components/note-pyramid.njk" import render as renderPyramid %}
+{% from "components/scale-histogram.njk" import render as renderHistogram %}
+{% block content %}
+  <h1 class="text-3xl font-bold mb-6">{{ title }}</h1>
+  {% if message %}
+    <p role="alert">{{ message }}</p>
+  {% endif %}
+  {% if notice %}
+    <p class="text-sm text-gray-500 mb-4">{{ notice }}</p>
+  {% endif %}
+  {% if perfumes.length %}
+    <div class="flex gap-6 overflow-x-auto">
+      {% for perfume in perfumes %}
+        <section data-perfume-id="{{ perfume.id }}" class="min-w-72 shrink-0">
+          <p class="text-sm text-gray-500">{{ perfume.brand.name }}</p>
+          <h2 class="text-xl font-semibold"><a href="/fragrance/{{ perfume.slug }}">{{ perfume.name }}</a></h2>
+          {{ renderPyramid(perfume.notes) }}
+          {% for histogram in perfume.scaleHistograms %}
+            {{ renderHistogram(histogram, perfume.id, histogram.metric, true) }}
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

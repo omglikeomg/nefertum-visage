@@ -6,8 +6,11 @@ import notesJson from '../mocks/notes.json';
 import perfumesJson from '../mocks/perfumes.json';
 
 import {
+  COMPARISON_METRICS,
+  MAX_COMPARISON_IDS,
   SCALE_METRICS,
   SHELF_KINDS,
+  type PerfumeComparisonItem,
   type PerfumeDetailsBrand,
   type PerfumeDetailsNotePyramid,
   type PerfumeDetailsResult,
@@ -38,6 +41,27 @@ function assert(condition: boolean, message: string): asserts condition {
   if (!condition) {
     throw new Error(`[web-bff] invalid mock data: ${message}`);
   }
+}
+
+const BUCKET_CODES = [0, 1, 2, 3, 4] as const;
+
+export function toComparisonItem(perfume: PerfumeDetailsResult): PerfumeComparisonItem {
+  return {
+    id: perfume.id,
+    name: perfume.name,
+    slug: perfume.slug,
+    brand: perfume.brand,
+    notes: perfume.notes,
+    scaleHistograms: COMPARISON_METRICS.map((metric) => {
+      const histogram = perfume.scaleHistograms.find((entry) => entry.metric === metric);
+      return {
+        metric,
+        // New array, so callers never hold a reference to the stored buckets.
+        buckets: BUCKET_CODES.map((code) => histogram?.buckets[code] ?? 0),
+        totalVotes: histogram?.totalVotes ?? 0,
+      };
+    }),
+  };
 }
 
 interface RawPerfume {
@@ -101,6 +125,24 @@ export class MockDataService {
 
   async getPerfumeBySlug(_req: Request, slug: string): Promise<PerfumeDetailsResult | null> {
     return this.perfumeBySlug.get(slug) ?? null;
+  }
+
+  async getPerfumesForComparison(
+    _req: Request,
+    ids: readonly string[],
+  ): Promise<PerfumeComparisonItem[]> {
+    if (ids.length > MAX_COMPARISON_IDS) {
+      throw new Error(`At most ${MAX_COMPARISON_IDS} perfume IDs can be compared at once.`);
+    }
+
+    const items: PerfumeComparisonItem[] = [];
+    for (const id of new Set(ids)) {
+      const perfume = this.perfumeById.get(id);
+      if (perfume !== undefined) {
+        items.push(toComparisonItem(perfume));
+      }
+    }
+    return items;
   }
 
   async recordScaleVote(
