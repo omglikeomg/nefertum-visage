@@ -14,6 +14,7 @@ import {
   setupNunjucks,
 } from './config/nunjucks.config';
 import { htmxMiddleware } from './middleware/htmx.middleware';
+import { createCompareRouter } from './routes/compare.router';
 import { createFragranceRouter } from './routes/fragrance.router';
 import { createIndexRouter } from './routes/index.router';
 import { createUserRouter } from './routes/user.router';
@@ -36,6 +37,7 @@ export function createApp(): Application {
   app.use(htmxMiddleware);
 
   app.use('/', createIndexRouter(mockData));
+  app.use('/compare', createCompareRouter(mockData));
   app.use('/fragrance', createFragranceRouter(mockData));
   app.use('/user', createUserRouter(mockData));
 
