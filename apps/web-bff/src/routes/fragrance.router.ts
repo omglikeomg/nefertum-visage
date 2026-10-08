@@ -48,7 +48,8 @@ export function createFragranceRouter(mockData: MockDataService): Router {
       return;
     }
 
-    const bucket = Number.parseInt(String(req.query.bucket), 10);
+    const rawBucket = String(req.query.bucket);
+    const bucket = /^\d+$/.test(rawBucket) ? Number(rawBucket) : Number.NaN;
 
     if (!Number.isInteger(bucket) || bucket < BUCKET_MIN || bucket > BUCKET_MAX) {
       res
